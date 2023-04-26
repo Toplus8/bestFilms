@@ -2,7 +2,9 @@ import React from 'react'
 
 const SearchBar = () => {
   return (
-    <div>SearchBar</div>
+    <div>
+      <input type='text'></input>
+    </div>
   )
 }
 
