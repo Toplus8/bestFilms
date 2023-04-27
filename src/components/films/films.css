@@ -1,0 +1,12 @@
+.filmContainer{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 1500px;
+    justify-content: space-evenly;
+}
+.cardFilm{
+    
+    display: flex;
+    margin: 3px;
+}

@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import getData from '../../helpers/getData'
+import FilmCard from '../filmCard/FilmCard'
+import films from './films.css'
 
 
 const Films = () => {
@@ -20,10 +22,10 @@ const Films = () => {
    
   
   return (
-    <div>
-      {films.map((film, index) => (
-            <div key={film.original_title}>
-            {film.original_title}
+    <div className='filmContainer'>
+      {films.map((film) => (
+            <div key={film.original_title} className='cardFilm'>
+            < FilmCard card={film}/>
                      
             </div>
            
