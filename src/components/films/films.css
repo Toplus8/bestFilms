@@ -2,11 +2,10 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 1500px;
+    width: 1000px;
     justify-content: space-evenly;
 }
 .cardFilm{
-    
     display: flex;
     margin: 3px;
 }

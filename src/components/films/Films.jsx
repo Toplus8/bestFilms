@@ -5,11 +5,9 @@ import FilmCard from '../filmCard/FilmCard'
 import films from './films.css'
 
 
-const Films = () => {
-
-  const [films, setFilms]=useState([])  
+const Films = ({films}) => {
   
-  useEffect (()=> {
+  /*useEffect (()=> {
     getDetails();
   }, []);
   const getDetails = () => {
@@ -18,18 +16,15 @@ const Films = () => {
         setFilms(data.results);
     })
       .catch((error) => console.error(error));
-  }
-   
+  }*/
   
   return (
     <div className='filmContainer'>
       {films.map((film) => (
             <div key={film.original_title} className='cardFilm'>
             < FilmCard card={film}/>
-                     
             </div>
-           
-        ))}
+      ))}
       
     </div>
   )

@@ -1,21 +1,34 @@
-import { useState } from 'react'
+import { useState, useEffect} from 'react'
 import Films from './components/films/Films'
 import Nav from './components/nav/Nav'
 import Footer from './components/footer/Footer'
 import SearchBar from './components/searchBar/SearchBar'
 import './App.css'
+import getData from './helpers/getData'
+
 
 function App() {
-  
+ const [films, setFilms] = useState([])
+ useEffect (()=> {
+  getDetails();
+ }, []);
+ const getDetails = () => {
+  getData('https://api.themoviedb.org/3/discover/movie?&language=es-es&sort_by=popularity.desc&api_key=1c8eba188e0ddf2a4dc3938ff158ec4b')
+  .then((data) => {
+      setFilms(data.results);
+  })
+    .catch((error) => console.error(error));
+} 
 
   return (
     
       <div className='container'>
         <Nav />
         <br />
-        <SearchBar />
+        <SearchBar films ={ films } setFilms ={ setFilms } />
         <br />
-        <Films />
+        <br />
+        <Films films = { films } />
         <br />
         <Footer />
       </div>
