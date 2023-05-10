@@ -9,6 +9,8 @@ import getData from './helpers/getData'
 
 function App() {
  const [films, setFilms] = useState([])
+ const [findedItem, setFindedItem] = useState("")
+ 
  useEffect (()=> {
   getDetails();
  }, []);
@@ -25,10 +27,7 @@ function App() {
       <div className='container'>
         <Nav />
         <br />
-        <SearchBar films ={ films } setFilms ={ setFilms } />
-        <br />
-        <br />
-        <Films films = { films } />
+        <Films films = { films } setFilms ={ setFilms } findedItem = { findedItem } setFindedItem = { setFindedItem } />
         <br />
         <Footer />
       </div>
