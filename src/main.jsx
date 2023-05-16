@@ -2,16 +2,15 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App.jsx'
 import './index.css'
-/*probando conexión para firebase */
+/*import { Route, RouteProvider, RouterProvider } from "react-router-dom";
+/*import { router } from "./routes";*/
 
-import firebaseConfig from './firebaseConfig.js'
+
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <firebaseAppProvider firebaseConfig ={firebaseConfig} >
-    <App />
-    </firebaseAppProvider>
+  /*<RouterProvider router={router} />*/
     
-  </React.StrictMode>,
+       <App />
+    
 )

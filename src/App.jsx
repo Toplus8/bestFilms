@@ -5,7 +5,9 @@ import Footer from './components/footer/Footer'
 import SearchBar from './components/searchBar/SearchBar'
 import './App.css'
 import getData from './helpers/getData'
-
+import SignIn from './components/auth/SignIn'
+import SignUp from './components/auth/SignUp'
+import AuthDetails from './components/auth/AuthDetails'
 
 function App() {
  const [films, setFilms] = useState([])
@@ -26,6 +28,9 @@ function App() {
     
       <div className='container'>
         <Nav />
+        <SignIn />
+        <AuthDetails />
+        <SignUp />
         <br />
         <Films films = { films } setFilms ={ setFilms } findedItem = { findedItem } setFindedItem = { setFindedItem } />
         <br />
