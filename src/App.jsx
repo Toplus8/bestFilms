@@ -2,7 +2,6 @@ import { useState, useEffect} from 'react'
 import Films from './components/films/Films'
 import Nav from './components/nav/Nav'
 import Footer from './components/footer/Footer'
-import SearchBar from './components/searchBar/SearchBar'
 import './App.css'
 import getData from './helpers/getData'
 import SignIn from './components/auth/SignIn'
@@ -27,14 +26,12 @@ function App() {
   return (
     
       <div className='container'>
-        <Nav />
         <SignIn />
         <AuthDetails />
         <SignUp />
         <br />
         <Films films = { films } setFilms ={ setFilms } findedItem = { findedItem } setFindedItem = { setFindedItem } />
         <br />
-        <Footer />
       </div>
      
   )

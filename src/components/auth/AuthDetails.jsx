@@ -1,9 +1,10 @@
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { auth } from "../../firebase";
+import { Link } from "react-router-dom";
 
-const AuthDetails = () => {
-  const [authUser, setAuthUser] = useState(null);
+const AuthDetails = ({ authUser, setAuthUser }) => {
+  /*const [authUser, setAuthUser] = useState(null);*/
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
@@ -22,7 +23,7 @@ const AuthDetails = () => {
   const userSignOut = () => {
     signOut(auth)
       .then(() => {
-        console.log("sign out successful");
+        
       })
       .catch((error) => console.log(error));
   };
@@ -35,7 +36,8 @@ const AuthDetails = () => {
           <button onClick={userSignOut}>Cerrar sesión</button>
         </>
       ) : (
-        <p>Sesión no iniciada</p>
+        <p>Sesión no iniciada, ¿desea acceder? pulse <Link to="/acceso">aquí</Link>.
+        Si no tiene cuenta aún pulse <Link to="/registro">aquí</Link> para registrarse</p>
       )}
     </div>
   );
