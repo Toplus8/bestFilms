@@ -9,7 +9,7 @@ import SignUp from './components/auth/SignUp'
 import AuthDetails from './components/auth/AuthDetails'
 
 function App() {
- const [films, setFilms] = useState([])
+ /*const [films, setFilms] = useState([])
  const [findedItem, setFindedItem] = useState("")
  
  useEffect (()=> {
@@ -34,7 +34,7 @@ function App() {
         <br />
       </div>
      
-  )
+  )*/
 }
 
 export default App

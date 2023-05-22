@@ -4,6 +4,7 @@ import getData from '../helpers/getData'
 import AuthDetails from '../components/auth/AuthDetails'
 import Films from '../components/films/Films'
 import SignIn from '../components/auth/SignIn'
+import FilmDetailed from './FilmDetailed'
 const Home = () => {
   
     const [films, setFilms] = useState([])
@@ -11,6 +12,7 @@ const Home = () => {
     const [email, setEmail]= useState('');
     const [pass, setPass]= useState('');
     const [authUser, setAuthUser] = useState(null);
+    
         
     useEffect (()=> {
      getDetails();
@@ -22,15 +24,16 @@ const Home = () => {
      })
        .catch((error) => console.error(error));
    } 
+   /*< FilmDetailed films = { films } /> SE PUEDE USAR ESTO AQUI PARA COGER DATOS PERO NO MOSTRARLOS??*/
    
      return (
        
          <div className='container'>
-            <SignIn  email = { email } setEmail = { setEmail } pass = { pass } setPass = { setPass } /> {/*Esto es para comprobar si funciona o no */}
-           <div></div>
-           <AuthDetails authUser = { authUser } setAuthUser = { setAuthUser }/>
-           
-           < Films films = { films } setFilms = { setFilms } findedItem = { findedItem } setFindedItem = { setFindedItem }  />
+          {/*Esto es para comprobar si funciona o no el acceso*/}
+           < SignIn  email = { email } setEmail = { setEmail } pass = { pass } setPass = { setPass } /> 
+          {/*Esto es para comprobar si funciona o no el acceso*/}
+           < AuthDetails authUser = { authUser } setAuthUser = { setAuthUser } />
+           < Films films = { films } setFilms = { setFilms } findedItem = { findedItem } setFindedItem = { setFindedItem } />
            <br />
          </div>
         

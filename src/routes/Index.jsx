@@ -4,6 +4,8 @@ import Error from "../pages/Error";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import FilmDetailed from "../pages/FilmDetailed"
+
 
 export const router = createBrowserRouter([
   {
@@ -12,10 +14,9 @@ export const router = createBrowserRouter([
     errorElement: <Error />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/acceso", element: <Login />},
+      { path: "/acceso", element: <Login /> },
       { path: "/registro", element: <Register /> },
-      /*{ path: "/peliculas/", element: < FilmDetails /> }, ToDo: create FilmsDetails */
-      // {path:"/peliculas" , element: <peliculas />},
+      { path: "/peliculas/:id", element: < FilmDetailed /> },
     ],
   },
  
