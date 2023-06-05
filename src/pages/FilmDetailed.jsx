@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import FilmDetails from '../components/filmDetails/FilmDetails'
 import { useParams } from 'react-router-dom';
-import getData from '../helpers/getData';
 import getDataById from '../helpers/getDataById';
 
 const FilmDetailed = () => {
