@@ -9,11 +9,10 @@ const Home = () => {
   
     const [films, setFilms] = useState([])
     const [findedItem, setFindedItem] = useState("")
-    const [email, setEmail]= useState('');
-    const [pass, setPass]= useState('');
+    /*const [email, setEmail]= useState('');
+    const [pass, setPass]= useState('');*/
     const [authUser, setAuthUser] = useState(null);
-    
-        
+            
     useEffect (()=> {
      getDetails();
     }, []);
@@ -24,17 +23,22 @@ const Home = () => {
      })
        .catch((error) => console.error(error));
    } 
-   /*< FilmDetailed films = { films } /> SE PUEDE USAR ESTO AQUI PARA COGER DATOS PERO NO MOSTRARLOS??*/
-   
+     
      return (
        
          <div className='container'>
-          {/*Esto es para comprobar si funciona o no el acceso*/}
-           < SignIn  email = { email } setEmail = { setEmail } pass = { pass } setPass = { setPass } /> 
-          {/*Esto es para comprobar si funciona o no el acceso*/}
+          
            < AuthDetails authUser = { authUser } setAuthUser = { setAuthUser } />
-           < Films films = { films } setFilms = { setFilms } findedItem = { findedItem } setFindedItem = { setFindedItem } />
-           <br />
+          
+          {authUser ? (
+            <>
+              < Films films = { films } setFilms = { setFilms } findedItem = { findedItem } setFindedItem = { setFindedItem } />
+              <br />
+            </>
+      ) : (
+        <p>Por favor, regístrese para acceder a los contenidos.</p>
+      )}
+           
          </div>
         
      )

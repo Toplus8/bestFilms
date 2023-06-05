@@ -1,11 +1,13 @@
 
-import React from 'react'
+import React, { useContext } from 'react'
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../firebase"
+import { authContext } from '../../context/AuthContext';
 
-const SignUp = ({email, setEmail, pass, setPass}) => {
+const SignUp = () => {
     /*const [email, setEmail]= useState('');
     const [pass, setPass]= useState('');*/
+    const [email, setEmail, pass, setPass/*, authUser, setAuthUser*/] = useContext(authContext)
 
     const SignUp = (e) =>{
         e.preventDefault();

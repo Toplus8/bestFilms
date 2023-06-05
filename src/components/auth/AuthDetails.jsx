@@ -4,7 +4,7 @@ import { auth } from "../../firebase";
 import { Link } from "react-router-dom";
 
 const AuthDetails = ({ authUser, setAuthUser }) => {
-  /*const [authUser, setAuthUser] = useState(null);*/
+  
 
   useEffect(() => {
     const listen = onAuthStateChanged(auth, (user) => {
@@ -37,7 +37,7 @@ const AuthDetails = ({ authUser, setAuthUser }) => {
         </>
       ) : (
         <p>Sesión no iniciada, ¿desea acceder? pulse <Link to="/acceso">aquí</Link>.
-        Si no tiene cuenta aún pulse <Link to="/registro">aquí</Link> para registrarse</p>
+        Si no tiene cuenta aún pulse <Link to="/registro">aquí</Link> para registrarse.</p>
       )}
     </div>
   );
