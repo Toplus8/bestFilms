@@ -5,6 +5,8 @@ import AuthDetails from '../components/auth/AuthDetails'
 import Films from '../components/films/Films'
 import SignIn from '../components/auth/SignIn'
 import FilmDetailed from './FilmDetailed'
+import './home.css'
+
 const Home = () => {
   
     const [films, setFilms] = useState([])
@@ -27,8 +29,10 @@ const Home = () => {
      return (
        
          <div className='container'>
-          
-           < AuthDetails authUser = { authUser } setAuthUser = { setAuthUser } />
+           <div className='authDetails'>
+            < AuthDetails authUser = { authUser } setAuthUser = { setAuthUser } />
+           </div>
+           
           
           {authUser ? (
             <>
@@ -36,7 +40,7 @@ const Home = () => {
               <br />
             </>
       ) : (
-        <p>Por favor, regístrese para acceder a los contenidos.</p>
+        <h2 className='advise'>Para disfrutar de todo el contenido que ofrece la aplicación regístrese o acceda con su perfil.</h2>
       )}
            
          </div>
