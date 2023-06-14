@@ -3,30 +3,18 @@ import React, { useContext } from 'react'
 import { signInWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../firebase";
 import { authContext } from '../../context/AuthContext';
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const SignIn = () => {
-   /* const [email, setEmail]= useState('');
-    const [pass, setPass]= useState('');*/
-    const [email, setEmail, pass, setPass/*,authUser, setAuthUser*/] = useContext(authContext)
-    
+   
+    const [email, setEmail, pass, setPass, authUser] = useContext(authContext)
+    const navigate = useNavigate();
+
     const SignIn = (e) =>{
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, pass)
-       /* {authUser ? (
-            
-            alert(<Link to="/">Acceso concedido, pulse aquí para volver a Inicio</Link>)
-              
-            
-          ) : (
-            alert(<p>Usuario no encontrado, Vuelva a rellenar los campos o regístrese</p>)
-          )}*/
-        
-        /*.then((userCredential)=> {
-            console.log(userCredential)
-        }).catch((error) => {
-            console.log(error)
-        });*/
+        navigate("/")
+           
     }
   return (
     <div className='sign-in-container'>

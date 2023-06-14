@@ -3,20 +3,18 @@ import React, { useContext } from 'react'
 import { createUserWithEmailAndPassword } from "firebase/auth"
 import { auth } from "../../firebase"
 import { authContext } from '../../context/AuthContext';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
-    /*const [email, setEmail]= useState('');
-    const [pass, setPass]= useState('');*/
-    const [email, setEmail, pass, setPass/*, authUser, setAuthUser*/] = useContext(authContext)
-
+   
+    const [email, setEmail, pass, setPass] = useContext(authContext)
+    const navigate = useNavigate();
     const SignUp = (e) =>{
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, pass)
-        /*.then((userCredential)=> {
-            console.log(userCredential)
-        }).catch((error) => {
-            console.log(error)
-        });*/
+        alert("Va a ser redirigido a la página de acceso")
+        navigate("/acceso")
+          
     }
   return (
     <div className='sign-in-container'>
